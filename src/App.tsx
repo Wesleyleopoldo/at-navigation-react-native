@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 
 import { options } from './styles';
+import Contato from './pages/Contato';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,12 @@ export default function App() {
           headerShown: true,
         }}
         />
+
+        <Stack.Screen
+        name='Contato'
+        component={Contato}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

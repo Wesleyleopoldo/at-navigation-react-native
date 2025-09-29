@@ -1,15 +1,18 @@
 import React, { useLayoutEffect } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { useNavigation, RouteProp, useRoute } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { s } from "./styles";
 import { RootStackParamList } from "../../types/types";
 
-type SobreScreenNavigationProp = RouteProp<RootStackParamList, "Sobre">;
+import Contato from "../Contato";
+
+type SobreScreenRouteProp = RouteProp<RootStackParamList, "Sobre">;
+type ContatoScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "Contato">;
 
 export default function Sobre() {
-    const route = useRoute<SobreScreenNavigationProp>();
-    const navigation = useNavigation();
+    const route = useRoute<SobreScreenRouteProp>();
+    const navigation = useNavigation<ContatoScreenNavigationProp>();
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -22,6 +25,15 @@ export default function Sobre() {
             <Text>Página Sobre</Text>
             <Text>{route.params.nome}</Text>
             <Text>{route.params.email}</Text>
+            <Button
+            title="Tela de Contato"
+            onPress={() => navigation.navigate("Contato", {contato: "8199999999"})}
+            />
+
+            <Button
+            title="Voltar"
+            onPress={() => navigation.goBack()}
+            />
         </View>
     )
 }
