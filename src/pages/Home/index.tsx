@@ -10,10 +10,14 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "H
 export default function Home() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
 
+    function navegaSobre() {
+        navigation.navigate("Sobre", {nome: "Contoso", email: "contoso@exemplo.com"});
+    }
+
     return (
         <View style={s.container}>
             <Text>Tela Home</Text>
-            <Button title="Sobre" onPress={() => navigation.navigate("Sobre")} />
+            <Button title="Sobre" onPress={navegaSobre} />
         </View>
     )
 }
