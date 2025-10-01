@@ -9,7 +9,7 @@ export default function Contato() {
     const navigation = useNavigation<ContatoScreenNavigationProp>();
 
     function handleHome() {
-        navigation.dispatch(StackActions.popToTop());
+        navigation.navigate("Home");
     }
 
     return (
