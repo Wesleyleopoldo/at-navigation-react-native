@@ -11,7 +11,7 @@ export default function Home() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
 
     function navegaSobre() {
-        navigation.navigate("Sobre", {nome: "Contoso", email: "contoso@exemplo.com"});
+        navigation.navigate("Sobre", {nome: "Wesley", email: "contoso@exemplo.com"});
     }
 
     return (
