@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Feather } from "@expo/vector-icons";
 
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
@@ -17,6 +18,12 @@ export default function App() {
         <Tab.Screen
         name='Home'
         component={Home}
+	options={{
+	  tabBarLabel: "Inicio",
+	  tabBarIcon: () => {
+	    return <Feather name="home" color={"blue"} size={23} />
+	  }
+	}}
         />
 
         <Tab.Screen
