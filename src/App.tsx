@@ -10,6 +10,8 @@ import Contato from './pages/Contato';
 
 const Tab = createBottomTabNavigator();
 
+// "#2196f3" 23
+
 export default function App() {
   return (
     <NavigationContainer>
@@ -20,20 +22,33 @@ export default function App() {
         component={Home}
 	      options={{
 	        tabBarLabel: "Inicio",
-	        tabBarIcon: () => {
-	          return <Feather name="home" color={"blue"} size={23} />
+	        tabBarIcon: ({color, size}) => {
+	          return <Feather name="home" color={color} size={size} />
 	        }
-	}}
+	      }}
         />
 
         <Tab.Screen
         name='Sobre'
         component={Sobre}
+        options={{
+          tabBarLabel: "Sobre",
+          tabBarIcon: ({color, size}) => {
+            return <Feather name="file-text" color={color} size={size}/>
+          }
+        }}
         />
 
         <Tab.Screen
         name='Contato'
         component={Contato}
+        options={{
+          tabBarLabel: "Contato",
+          tabBarStyle: { display: "none" },
+          tabBarIcon: ({color, size}) => {
+            return <Feather name="phone-call" color={color} size={size}/>
+          }
+        }}
         />
 
       </Tab.Navigator>
