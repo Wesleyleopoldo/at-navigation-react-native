@@ -18,11 +18,11 @@ export default function App() {
         <Tab.Screen
         name='Home'
         component={Home}
-	options={{
-	  tabBarLabel: "Inicio",
-	  tabBarIcon: () => {
-	    return <Feather name="home" color={"blue"} size={23} />
-	  }
+	      options={{
+	        tabBarLabel: "Inicio",
+	        tabBarIcon: () => {
+	          return <Feather name="home" color={"blue"} size={23} />
+	        }
 	}}
         />
 
